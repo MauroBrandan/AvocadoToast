@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import { Layout } from '../components/Layout'
+import { ProductsList } from '../components/ProductsList'
 
 function Home() {
 	const [products, setProducts] = useState([])
@@ -13,14 +15,9 @@ function Home() {
 	}, [])
 
 	return (
-		<div>
-			<h1>Avocado Toast</h1>
-			<ul>
-				{products.map((product) => (
-					<li key={product.id}>{product.name}</li>
-				))}
-			</ul>
-		</div>
+		<Layout>
+			<ProductsList products={products} />
+		</Layout>
 	)
 }
 
