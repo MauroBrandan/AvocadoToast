@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
+import { ProductDetail } from '../../components/ProductDetail'
 
 function Product() {
 	const router = useRouter()
@@ -25,8 +26,7 @@ function Product() {
 
 	return (
 		<div>
-			<h1>Avocado: {avocado.name}</h1>
-			<p>{avocado.attributes.description}</p>
+			<ProductDetail product={avocado} />
 		</div>
 	)
 }
