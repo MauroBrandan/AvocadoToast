@@ -125,6 +125,20 @@ const data = {
 			taste: 'Splendid, is an avocado',
 		},
 	},
+	t345w484: {
+		name: 'Timo Avocado',
+		id: 't345w484',
+		sku: 'MW79ZZ64',
+		price: 1.44,
+		image: '/images/gwen.jpg',
+		attributes: {
+			description:
+				'The Zutano avocado is a cold hardy, consistent producing avocado variety. It resembles the Fuerte in appearance but is less flavorful but more cold hardy. The green fruits are obovate in shape with waxy bumps on the skin. The flesh has a low oil but high water content which causes it to have a more fibrous texture.',
+			shape: 'Pear',
+			hardiness: '-5 °C',
+			taste: 'Splendid, is an avocado',
+		},
+	},
 }
 
 export default data
