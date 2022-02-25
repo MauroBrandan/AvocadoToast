@@ -1,12 +1,15 @@
 import '../global.css'
 import 'semantic-ui-css/semantic.min.css'
 import { Layout } from '../components/Layout'
+import CartProvider from '../context/Cart'
 
 function MyApp({ Component, pageProps }) {
 	return (
-		<Layout>
-			<Component {...pageProps} />
-		</Layout>
+		<CartProvider>
+			<Layout>
+				<Component {...pageProps} />
+			</Layout>
+		</CartProvider>
 	)
 }
 
