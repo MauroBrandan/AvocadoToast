@@ -1,4 +1,4 @@
-import React, { Dispatch, useContext, useReducer } from 'react'
+import React, { useContext, useReducer } from 'react'
 
 const defaultState = {}
 
@@ -18,7 +18,7 @@ const CartProvider = ({ children }) => {
 }
 
 function cartReducers(state, { item, type, quantity: qtyToAdd = 1 }) {
-	const existingCartItem = state[item.id]
+	const existingCartItem = state[item?.id]
 
 	switch (type) {
 		case 'add': {
@@ -63,6 +63,14 @@ function cartReducers(state, { item, type, quantity: qtyToAdd = 1 }) {
 			return newCartItems
 		}
 
+		case 'clear': {
+			const newCartItems = { ...state }
+			for (const item in newCartItems) {
+				delete newCartItems[item]
+			}
+			return newCartItems
+		}
+
 		default: {
 			throw new Error(`Unhandled action type: ${type}`)
 		}
@@ -104,9 +112,15 @@ export const useCartMutations = () => {
 			item: product,
 		})
 
+	const clearCart = () =>
+		dispatch({
+			type: 'clear',
+		})
+
 	return {
 		addToCart,
 		removeFromCart,
+		clearCart,
 	}
 }
 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Cart = ({ size = '34px' }) => (
+const CartIcon = ({ size = '34px' }) => (
 	<svg width={size} height={size} viewBox='0 0 512 512'>
 		<path
 			d='M490.1 292.03H21.9c-7.953 0-14.4-6.447-14.4-14.4v-34.391c0-7.953 6.447-14.4 14.4-14.4h468.2c7.953 0 14.4 6.447 14.4 14.4v34.391c0 7.952-6.447 14.4-14.4 14.4z'
@@ -36,4 +36,4 @@ const Cart = ({ size = '34px' }) => (
 	</svg>
 )
 
-export default Cart
+export default CartIcon

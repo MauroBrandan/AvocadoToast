@@ -2,9 +2,12 @@ import React from 'react'
 import Link from 'next/link'
 import { Menu } from 'semantic-ui-react'
 import Avocado from '../Icons/Avocado'
-import Cart from '../Icons/Cart'
+import { Cart } from '../Cart'
+import { useCart } from '../../context/Cart'
 
 export const Header = () => {
+	const { count } = useCart()
+
 	return (
 		<>
 			<Menu size='huge' borderless pointing as='header'>
@@ -14,9 +17,9 @@ export const Header = () => {
 						<h1>Avocado Toast</h1>
 					</Menu.Item>
 				</Link>
-				<Link href='/cart'>
+				<Link href='/cart' passHref>
 					<Menu.Item position='right'>
-						<Cart />
+						<Cart cartCount={count} />
 					</Menu.Item>
 				</Link>
 			</Menu>
