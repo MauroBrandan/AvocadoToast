@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Layout } from '../components/Layout'
+import { CallToAction } from '../components/CallToAction'
 import { ProductsList } from '../components/ProductsList'
 
 function Home() {
@@ -15,9 +15,10 @@ function Home() {
 	}, [])
 
 	return (
-		<Layout>
+		<>
+			<CallToAction url='/about'>5 Surprising Facts About Avocados</CallToAction>
 			<ProductsList products={products} />
-		</Layout>
+		</>
 	)
 }
 
